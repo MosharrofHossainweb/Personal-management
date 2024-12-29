@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.title{
+    @apply font-poppin text-[40px] font-bold
+}
+.detail{
+    @apply font-poppin text-[24px] font-normal text-[#616161]
+}
+/* .setup{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: repeat(8,1fr);
+} */
