@@ -4,6 +4,7 @@ import { FaFacebook } from "react-icons/fa";
 import { IoLogoLinkedin } from "react-icons/io5";
 import { FaGithub } from "react-icons/fa";
 import { TbWorld } from "react-icons/tb";
+import { FaWhatsapp } from "react-icons/fa";
 const Contact = () => {
   return (
     <>
@@ -28,13 +29,13 @@ const Contact = () => {
                 moshorrofhossainpdl@gmail.com
               </a>
             </p>
-            <p>
+            <p className="flex gap-3">
               Phone:{" "}
               <a
                 href="tel:+8801617555633"
-                className="text-yellow-300 underline hover:text-yellow-400 transition"
+                className="text-yellow-300 underline flex items-center git init gap-1 hover:text-yellow-400 transition"
               >
-                +8801617-555633
+               <FaWhatsapp className="text-xl " /> +8801617-555633
               </a>
             </p>
           </div>
