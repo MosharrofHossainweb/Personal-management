@@ -7,21 +7,21 @@ const Banner = () => {
 
   return (
     <>
-      <div className="relative bg-blue-950  from-blue-900 to-purple-700 text-white overflow-hidden min-h-screen flex items-center">
+      <div className="relative bg-blue-400  from-blue-900 to-purple-700 text-white overflow-hidden min-h-screen flex items-center">
         <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center px-6 lg:px-12">
           {/* Text Section */}
           <div className="w-full lg:w-1/2 text-center lg:text-left space-y-6">
-            <h1 className="text-4xl text-yellow-300 lg:text-6xl  font-extrabold animate-fade-in">
+            <h1 className="text-4xl text-yellow-300 lg:text-4xl  font-extrabold animate-fade-in">
               Build Stunning{' '}
-              <span className="text-blue-200">Web Experiences</span>
+              <span className="text-white">Web Experiences</span>
             </h1>
-            <p className="text-lg text-blue-200 lg:text-xl animate-slide-in pt-5">
+            <p className="text-lg text-blue-900 lg:text-xl animate-slide-in pt-5">
               Hi, I'm a skilled React.js Front-End Developer. I craft
               responsive, elegant, and modern websites tailored to your needs.
             </p>
             <h3 className="text-3xl lg:text-6xl  font-extrabold animate-fade-in">
             Your requirement is {' '}
-              <span className="text-yellow-300">our priority</span>
+              <span className="text-yellow-300">our main priority</span>
             </h3>
             <div className="flex justify-center lg:justify-start gap-4 mt-10 pt-6">
             <Link to='/service' className='px-6 py-3 bg-yellow-300 text-black font-semibold rounded-lg shadow-md hover:bg-yellow-400 transition transform hover:-translate-y-1'>

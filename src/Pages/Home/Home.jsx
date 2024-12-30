@@ -3,6 +3,7 @@ import Banner from '../../Componet/Banner/Banner';
 import Shop from '../PortfolioPage/Shop';
 import Explore from './Explore/Explore';
 import Portfolio from '../Porfolio/Portfolio';
+import OurProduct from '../Shope/OurProduct';
 
 const Home = () => {
   return (
@@ -10,7 +11,7 @@ const Home = () => {
       <Banner />
       <Explore />
       <Portfolio />
-      <Shop />
+      <OurProduct/>
     </>
   );
 };

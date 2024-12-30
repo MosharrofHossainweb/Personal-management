@@ -10,8 +10,8 @@ const Navber = () => {
         <div className="container mx-auto px-4 flex justify-between items-center py-4">
           {/* Logo */}
           <div className="text-yellow-400 text-3xl font-bold tracking-wide">
-            <Link className='text-5xl' to='/'>
-            M<span className="text-white text-3xl">Dev</span>
+            <Link className="text-5xl" to="/">
+              M<span className="text-white text-3xl">Dev</span>
             </Link>
           </div>
 
@@ -43,7 +43,7 @@ const Navber = () => {
             </Link>
             <Link to="/porfoliopage" className="relative group">
               <span className="hover:text-yellow-400 transition duration-300">
-                Portfolio
+                Gallery
               </span>
               <span className="absolute left-0 bottom-[-2px] w-0 h-[2px] bg-yellow-400 transition-all duration-500 group-hover:w-full"></span>
             </Link>
@@ -59,8 +59,11 @@ const Navber = () => {
             >
               Login
             </Link>
-            
-            <button onClick={() => navigate('/register')} className='px-4 py-2 bg-slate-400 text-gray-900 rounded-full font-semibold hover:bg-yellow-300 hover:shadow-lg transition duration-300'>
+
+            <button
+              onClick={() => navigate('/register')}
+              className="px-4 py-2 bg-slate-400 text-gray-900 rounded-full font-semibold hover:bg-yellow-300 hover:shadow-lg transition duration-300"
+            >
               Sign Up
             </button>
           </div>
@@ -114,16 +117,16 @@ const Navber = () => {
               Service
             </Link>
             <Link
+              to="/porfoliopage"
+              className="block py-3 px-4 text-gray-300 hover:bg-yellow-400 hover:text-gray-900 transition duration-300"
+            >
+              Gelary
+            </Link>
+            <Link
               to="/about"
               className="block py-3 px-4 text-gray-300 hover:bg-yellow-400 hover:text-gray-900 transition duration-300"
             >
               About
-            </Link>
-            <Link
-              to="/porfoliopage"
-              className="block py-3 px-4 text-gray-300 hover:bg-yellow-400 hover:text-gray-900 transition duration-300"
-            >
-              Portfolio
             </Link>
             <Link
               to="/shop"

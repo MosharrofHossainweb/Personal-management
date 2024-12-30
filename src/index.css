@@ -8,8 +8,9 @@
 .detail{
     @apply font-poppin text-[24px] font-normal text-[#616161]
 }
-/* .setup{
-    display: grid;
-    grid-template-columns: repeat(12,1fr);
-    grid-template-rows: repeat(8,1fr);
-} */
+.pagination_product li a{
+     @apply py-4 px-6 bg-yellow-800 rounded-lg 
+}
+.pagination_product .selected a{
+     @apply py-4 px-6 bg-yellow-600 rounded-lg 
+}
