@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const AboutPage = () => {
   return (
@@ -36,15 +37,16 @@ const AboutPage = () => {
             With years of experience, our team is committed to excellence,
             innovation, and customer satisfaction.
           </p>
-          <p className="text-gray-400 leading-relaxed">
+          <p className="text-gray-400 leading-relaxed pb-9">
             Our services range from web designing and development to digital
             marketing, graphics designing, video editing, and IT business
             solutions. We strive to empower businesses to achieve their goals
             through cutting-edge technology and creative strategies.
           </p>
-          <button className="py-3 px-6 bg-primary text-white rounded-lg shadow-md hover:bg-secondary transition">
+          
+          <Link to='/contact' className="py-3 px-6 bg-primary text-white rounded-lg shadow-md hover:bg-secondary transition">
             Contact Us
-          </button>
+          </Link>
         </div>
       </div>
     </div>

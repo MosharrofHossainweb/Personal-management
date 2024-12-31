@@ -15,6 +15,7 @@ import About from './Pages/About/About';
 import Shop from './Pages/PortfolioPage/Shop';
 import Contact from './Pages/Contact/Contact';
 import PortfolioPage from './Pages/PortfolioPage/PortfolioPage'; // Corrected name
+import ProductDetailCard from './Componet/ShopComponent/ProductDetailCard';
 
 const App = () => {
   const myrout = createBrowserRouter(
@@ -26,7 +27,8 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/porfoliopage" element={<PortfolioPage />} />{' '}
+          <Route path="/porfoliopage" element={<PortfolioPage />} />
+          <Route path="/productdetailcard" element={<ProductDetailCard />} />
           {/* Fixed the route path */}
         </Route>
         <Route path="/login" element={<Login />} />

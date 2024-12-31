@@ -55,7 +55,7 @@ const Navber = () => {
             </Link>
             <Link
               to="/login"
-              className="px-3 py-2 bg-gray-800 text-yellow-400 rounded-lg font-semibold hover:bg-yellow-400 hover:text-gray-900 transition duration-300"
+              className="px-3 py-2 bg-gray-800 text-yellow-100 rounded-lg font-semibold hover:bg-yellow-400 hover:text-gray-900 transition duration-300"
             >
               Login
             </Link>
@@ -136,13 +136,13 @@ const Navber = () => {
             </Link>
             <Link
               to="/login"
-              className="block py-3 px-4 text-yellow-400 bg-gray-900 hover:bg-yellow-400 hover:text-gray-900 transition duration-300"
+              className="block py-3 px-4 text-yellow-400 mb-2 mt-2 bg-gray-500 hover:bg-yellow-300 hover:text-gray-900 transition duration-300"
             >
               Login
             </Link>
             <Link
               to="/register"
-              className="block py-3 px-4 text-center bg-yellow-400 text-gray-900 font-semibold hover:bg-yellow-700 transition duration-300"
+              className="block py-3 px-4 text-center bg-blue-100 text-gray-900 font-semibold hover:bg-blue-700 transition duration-300"
             >
               Sign Up
             </Link>
