@@ -66,7 +66,7 @@ const Footer = () => {
           <ul className="space-y-2">
             <li className="relative group">
               <Link
-                to="/help"
+                 to="/contact"
                 className="relative inline-block hover:text-yellow-400"
               >
                 Help
@@ -75,7 +75,7 @@ const Footer = () => {
             </li>
             <li className="relative group">
               <Link
-                to="/payment"
+                to="/contact"
                 className="relative inline-block hover:text-yellow-400"
               >
                 Payment Options
@@ -84,7 +84,7 @@ const Footer = () => {
             </li>
             <li className="relative group">
               <Link
-                to="/consultancy"
+                 to="/contact"
                 className="relative inline-block hover:text-yellow-400"
               >
                 Consultancy

@@ -1,9 +1,73 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { Slide, toast } from 'react-toastify';
 const Login = () => {
-
+  // ====================firebase Authentication====================
+  const auth = getAuth();
+  // ====================firebase Authentication====================
+  const [email, setEmail] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [password, setPassword] = useState('');
+  const [passwordError, setPasswordError] = useState('');
   const navigate = useNavigate();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!email) {
+      setEmailError('Enter your E-mail');
+    }
+    if (!password) {
+      setPasswordError('Enter Your Password');
+    } else {
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          if (user.emailVerified === false) {
+            toast.warn('Email is not varified!', {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: false,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "dark",
+              transition: Slide,
+              });
+          }else{
+            navigate('/')
+            toast.warn('Login Succesfully!', {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: false,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "dark",
+              transition: Slide,
+              });
+          }
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          if (errorCode == 'auth/invalid-credential') {
+            toast.warn('Something is wrong!', {
+              position: 'top-right',
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: false,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: 'dark',
+              transition: Slide,
+            });
+          }
+        });
+    }
+  };
 
   return (
     <>
@@ -17,19 +81,31 @@ const Login = () => {
             <p className="text-gray-400">You are welcome!</p>
           </div>
 
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <input
+              onChange={(e) => {
+                setEmail(e.target.value);
+                setEmailError('');
+              }}
               type="email"
               placeholder="E-mail"
               className="w-full bg-gray-700 rounded-lg px-4 py-3 focus:ring-2 focus:ring-purple-500"
             />
+            {emailError && <p className="text-red-500 text-sm">{emailError}</p>}
 
             <input
+              onChange={(e) => {
+                setPassword(e.target.value);
+                setPasswordError('');
+              }}
               type="password"
               placeholder="Password"
               className="w-full bg-gray-700 rounded-lg px-4 py-3 focus:ring-2 focus:ring-purple-500"
             />
-           
+            {passwordError && (
+              <p className="text-red-500 text-sm">{passwordError}</p>
+            )}
+
             <button
               type="submit"
               className="w-full bg-purple-500 hover:bg-purple-600 text-white rounded-lg px-4 py-3 font-bold"
@@ -42,15 +118,11 @@ const Login = () => {
                 I agree with terms & conditions
               </label>
             </div>
-           
           </form>
 
           <p className="text-center text-gray-400 text-sm mt-4">
             Don't have an account?{' '}
-            <Link
-              onClick={() => navigate('/register')}
-              className="text-purple-500 hover:underline"
-            >
+            <Link to="/register" className="text-purple-500 hover:underline">
               Register{' '}
             </Link>
           </p>

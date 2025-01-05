@@ -5,7 +5,7 @@ const AboutPage = () => {
   return (
     <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-16 px-8 font-poppin">
       {/* Header Section */}
-      <div className="text-center mb-14">
+      <div className="container mx-auto text-center mb-14">
         <h1 className="text-5xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary animate-fade-in">
           About Us
         </h1>
@@ -16,7 +16,7 @@ const AboutPage = () => {
       </div>
 
       {/* Content Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Image Section */}
         <div className="animate-slide-in">
           <img

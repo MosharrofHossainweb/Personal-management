@@ -16,6 +16,8 @@ import Shop from './Pages/PortfolioPage/Shop';
 import Contact from './Pages/Contact/Contact';
 import PortfolioPage from './Pages/PortfolioPage/PortfolioPage'; // Corrected name
 import ProductDetailCard from './Componet/ShopComponent/ProductDetailCard';
+import app from './firebase.config';
+import { ToastContainer, toast } from 'react-toastify';
 
 const App = () => {
   const myrout = createBrowserRouter(
@@ -30,8 +32,8 @@ const App = () => {
           <Route path="/porfoliopage" element={<PortfolioPage />} />
           <Route path="/productdetailcard" element={<ProductDetailCard />} />
           {/* Fixed the route path */}
-        </Route>
         <Route path="/login" element={<Login />} />
+        </Route>
         <Route path="/register" element={<Register />} />
       </Route>
     )
@@ -40,6 +42,7 @@ const App = () => {
   return (
     <>
       <RouterProvider router={myrout} />
+      <ToastContainer />
     </>
   );
 };
