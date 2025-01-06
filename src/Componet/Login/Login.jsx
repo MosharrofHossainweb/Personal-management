@@ -126,6 +126,12 @@ const Login = () => {
               Register{' '}
             </Link>
           </p>
+          <p className="text-center text-gray-400 text-sm mt-4">
+            Forget Password?{' '}
+            <Link to="/forgetpassword" className="text-purple-500 hover:underline">
+              Reset{' '}
+            </Link>
+          </p>
         </div>
       </div>
     </>
