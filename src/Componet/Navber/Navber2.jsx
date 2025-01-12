@@ -5,10 +5,22 @@ const Navber2 = () => {
   return (
     <>
       <div className="min-h-screen w-64 bg-gradient-to-b from-blue-600 to-indigo-700 text-white flex flex-col py-6 shadow-lg">
-        <h2 className="text-2xl font-bold text-center mb-6">Messaging App</h2>
+        {/* Logo */}
+
         <nav className="flex-1 space-y-4">
+          <div className="text-yellow-400 text-3xl font-bold tracking-wide mb-10 m-3">
+            <Link className="text-5xl" to="/">
+              M<span className="text-white text-3xl">Dev</span>
+            </Link>
+          </div>
+          {/* <Link
+            to="/"
+            className="block px-4 py-2 rounded-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300"
+          >
+            Friends
+          </Link> */}
           <Link
-            to="/friendrequest"
+            to="/friendlist"
             className="block px-4 py-2 rounded-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300"
           >
             Friends
@@ -20,13 +32,13 @@ const Navber2 = () => {
             Messages
           </Link>
           <Link
-            to="/friend-requests"
+            to="/friendrequest"
             className="block px-4 py-2 rounded-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300"
           >
             Friend Requests
           </Link>
           <Link
-            to="/sent-requests"
+            to="/sentrequests"
             className="block px-4 py-2 rounded-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300"
           >
             Sent Requests

@@ -17,12 +17,16 @@ import Contact from './Pages/Contact/Contact';
 import PortfolioPage from './Pages/PortfolioPage/PortfolioPage'; // Corrected name
 import ProductDetailCard from './Componet/ShopComponent/ProductDetailCard';
 import app from './firebase.config';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer} from 'react-toastify';
 import ForgetPassWord from './Componet/ForgetPassWord/ForgetPassWord';
 import Profile from './Componet/Profile/Profile';
 import LayoutTwo from './Layouts/LayoutTwo';
-import Navber2 from './Componet/Navber/Navber2';
+
 import FriendRequest from './Pages/ProfilePages/FriendRequest';
+import Massege from './Pages/ProfilePages/Massege';
+import Block from './Pages/ProfilePages/Block';
+import SendReq from './Pages/ProfilePages/SendReq';
+import FriendListPage from './Pages/ProfilePages/FriendListPage';
 
 const App = () => {
   const myrout = createBrowserRouter(
@@ -40,13 +44,18 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/forgetpassword" element={<ForgetPassWord />} />
         </Route>
-        <Route path="/layouttwo" element={<Profile />} />
+          <Route path="/layouttwo" element={<Profile />} />
+
         <Route path="/register" element={<Register />} />
 
-        <Route path="/layouttwo" element={<LayoutTwo />} />
-          <Route index element={<Profile />} />
+        <Route path="/" element={<LayoutTwo />}>
+        
+          <Route path="/friendlist" element={<FriendListPage />} />
           <Route path="/friendrequest" element={<FriendRequest />} />
-        <Route />
+          <Route path="/messages" element={<Massege />} />
+          <Route path="/blocked" element={<Block />} />
+          <Route path="/sentrequests" element={<SendReq />} />
+        </Route>
       </Route>
     )
   );

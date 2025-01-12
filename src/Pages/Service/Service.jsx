@@ -42,7 +42,7 @@ const services = [
       "From promotional videos to YouTube content, we provide cutting-edge editing, color grading, and motion graphics.",
   },
   {
-    title: "IT Business Solutions",
+    title: "Business IT Solutions",
     description:
       "End-to-end IT solutions tailored to optimize and grow your online business efficiently.",
     icon: "🛠️",

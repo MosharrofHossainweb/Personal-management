@@ -1,12 +1,15 @@
 import React from 'react';
+import Navber2 from '../Navber/Navber2';
 // import Navber2 from '../Navber/Navber2';
 
 const Profile = () => {
   return (
     <>
-    
-      <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-gray-100 to-gray-200">
-        <div className="w-full max-w-lg bg-white rounded-lg shadow-2xl p-8">
+    <Navber2/>
+
+  
+    <div className=" flex flex-col items-center justify-center bg-gradient-to-r from-gray-100 to-gray-200">
+        <div className=" max-w-lg bg-white rounded-lg shadow-2xl p-8">
           <div className="flex flex-col items-center mb-6">
             <img
               src="https://via.placeholder.com/150"
@@ -37,6 +40,8 @@ const Profile = () => {
           </div>
         </div>
       </div>
+    
+      
     </>
   );
 };

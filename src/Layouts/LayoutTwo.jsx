@@ -5,11 +5,14 @@ import { Outlet } from 'react-router-dom';
 const LayoutTwo = () => {
   return (
     <>
-      <div className="mass">
+    
+      <div className="div flex">
+
         <Navber2 />
         <Outlet />
-        <Footer/>
       </div>
+        
+      
     </>
   );
 };
