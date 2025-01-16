@@ -10,7 +10,7 @@ const Block = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-100 lg:w-full">
       {/* Header */}
       <header className="bg-red-600 text-white px-6 py-4 shadow-md flex justify-between items-center">
         <h1 className="text-xl font-bold">Blocked Users</h1>

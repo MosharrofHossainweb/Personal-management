@@ -2,15 +2,22 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { Slide, toast } from 'react-toastify';
+import { useDispatch } from 'react-redux';
+import { userData } from '../../Slice/UserSlice';
 const Login = () => {
   // ====================firebase Authentication====================
   const auth = getAuth();
   // ====================firebase Authentication====================
+  // ===========================state============================
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState('');
   const [password, setPassword] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const navigate = useNavigate();
+  // ===========================state============================
+  // ==========================Redux variable===========================
+  const dispatch = useDispatch();
+  // ==========================Redux variable===========================
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!email) {
@@ -24,29 +31,36 @@ const Login = () => {
           const user = userCredential.user;
           if (user.emailVerified === false) {
             toast.warn('Email is not varified!', {
-              position: "top-right",
+              position: 'top-right',
               autoClose: 5000,
               hideProgressBar: false,
               closeOnClick: false,
               pauseOnHover: true,
               draggable: true,
               progress: undefined,
-              theme: "dark",
+              theme: 'dark',
               transition: Slide,
-              });
-          }else{
-            navigate('/')
+            });
+          } else {
+            navigate('/profile');
+            // ============Set data to Redux============
+
+            dispatch(userData(userCredential.user));
+            // ============Set data to Redux============
+            // ================set data to the local starage ====================
+            localStorage.setItem('user',JSON.stringify(userCredential.user))
+            // ================set data to the local starage ====================
             toast.warn('Login Succesfully!', {
-              position: "top-right",
+              position: 'top-right',
               autoClose: 5000,
               hideProgressBar: false,
               closeOnClick: false,
               pauseOnHover: true,
               draggable: true,
               progress: undefined,
-              theme: "dark",
+              theme: 'dark',
               transition: Slide,
-              });
+            });
           }
         })
         .catch((error) => {
@@ -128,7 +142,10 @@ const Login = () => {
           </p>
           <p className="text-center text-gray-400 text-sm mt-4">
             Forget Password?{' '}
-            <Link to="/forgetpassword" className="text-purple-500 hover:underline">
+            <Link
+              to="/forgetpassword"
+              className="text-purple-500 hover:underline"
+            >
               Reset{' '}
             </Link>
           </p>

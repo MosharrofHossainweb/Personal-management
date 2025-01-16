@@ -27,6 +27,7 @@ import Massege from './Pages/ProfilePages/Massege';
 import Block from './Pages/ProfilePages/Block';
 import SendReq from './Pages/ProfilePages/SendReq';
 import FriendListPage from './Pages/ProfilePages/FriendListPage';
+import Navber2 from './Componet/Navber/Navber2';
 
 const App = () => {
   const myrout = createBrowserRouter(
@@ -44,12 +45,12 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/forgetpassword" element={<ForgetPassWord />} />
         </Route>
-          <Route path="/layouttwo" element={<Profile />} />
+          <Route path="/layouttwo" element={<Navber2 />} />
 
         <Route path="/register" element={<Register />} />
 
         <Route path="/" element={<LayoutTwo />}>
-        
+          <Route path='/profile' element={<Profile/>}/>
           <Route path="/friendlist" element={<FriendListPage />} />
           <Route path="/friendrequest" element={<FriendRequest />} />
           <Route path="/messages" element={<Massege />} />

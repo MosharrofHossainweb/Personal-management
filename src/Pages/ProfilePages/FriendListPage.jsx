@@ -10,7 +10,7 @@ const FriendListPage = () => {
   ];
   return (
     <>
-   <div className="min-h-screen bg-gray-100">
+   <div className="min-h-screen lg:w-full bg-gray-100">
       {/* Header */}
       <header className="bg-indigo-500 text-white px-6 py-4 shadow-lg flex justify-between items-center">
         <h1 className="text-lg font-bold">Friend List</h1>
