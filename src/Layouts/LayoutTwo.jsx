@@ -5,11 +5,14 @@ import { Outlet, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
 const LayoutTwo = () => {
-  const sliceUser = useSelector((state)=>state.currentUser.value)
+  const UserSlice = useSelector((state)=>state.currentUser.value)
   const navigate= useNavigate()
   useEffect(()=>{
-    if(sliceUser==null){
+    if(UserSlice==null){
       navigate('/login')
+       // =================localStarage===================
+    localStorage.removeItem('user')
+    // =================localStarage===================
     }
   },[])
   return (

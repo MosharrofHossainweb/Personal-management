@@ -4,9 +4,11 @@ import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { Slide, toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { userData } from '../../Slice/UserSlice';
+import { getDatabase, ref, set } from "firebase/database";
 const Login = () => {
   // ====================firebase Authentication====================
   const auth = getAuth();
+  const db = getDatabase();
   // ====================firebase Authentication====================
   // ===========================state============================
   const [email, setEmail] = useState('');
@@ -50,6 +52,13 @@ const Login = () => {
             // ================set data to the local starage ====================
             localStorage.setItem('user',JSON.stringify(userCredential.user))
             // ================set data to the local starage ====================
+            // ==============================set dtat to user=====================
+            set(ref(db, 'allusers/'+userCredential.user.uid), {
+             userName:userCredential.user.displayName,
+             userPhoto:userCredential.user.photoURL,
+
+            });
+            // ==============================set dtat to user=====================
             toast.warn('Login Succesfully!', {
               position: 'top-right',
               autoClose: 5000,
