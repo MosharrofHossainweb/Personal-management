@@ -32,7 +32,7 @@ const FriendRequest = () => {
       currentUserName: reduxUser.displayName,
       currentUserPhoto: reduxUser.photoURL,
     });
-    remove(ref(db, 'friendreq/'+friendData.key));
+    remove(ref(db, 'friendreq/' + friendData.key));
   };
 
   /* ---------- State: Store all friend requests ---------- */
@@ -43,7 +43,8 @@ const FriendRequest = () => {
     const arr = [];
     onValue(ref(db, 'friendreq/'), (snapshot) => {
       snapshot.forEach((item) => {
-        if (item.val().recieverId === reduxUser.uid) {
+        let arr=[]
+        if (item.val().recieverId == reduxUser.uid) {
           arr.push({ ...item.val(), key: item.key });
         }
       });

@@ -57,7 +57,7 @@ const App = () => {
           <Route path="/messages" element={<Massege />} />
           <Route path="/blocked" element={<Block />} />
           <Route path="/sentrequests" element={<SendReq />} />
-          <Route path="/friendlist" element={<FriendList />} />
+          <Route path="/allfriendlist" element={<FriendList />} />
         </Route>
       </Route>
     )

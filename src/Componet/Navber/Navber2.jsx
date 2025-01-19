@@ -62,7 +62,7 @@ const Navber2 = () => {
             Sent Requests
           </Link>
           <Link
-            to="/friendlist"
+            to="/allfriendlist"
             className="block px-4 py-2 rounded-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300"
           >
             Friend List
