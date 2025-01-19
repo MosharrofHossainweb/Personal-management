@@ -10,8 +10,8 @@ import React, { useEffect, useState } from 'react';
 import { FiSearch, FiUserCheck, FiUserX } from 'react-icons/fi';
 import { useSelector } from 'react-redux';
 
-/* ==================== FriendRequest Component ==================== */
-const FriendRequest = () => {
+/* ==================== FriendList Component ==================== */
+const FriendList = () => {
   /* ---------- Redux: Get current user ---------- */
   const reduxUser = useSelector((state) => state.currentUser.value);
 
@@ -32,7 +32,7 @@ const FriendRequest = () => {
       currentUserName: reduxUser.displayName,
       currentUserPhoto: reduxUser.photoURL,
     });
-    remove(ref(db, 'friendreq/'+friendData.key));
+    
   };
 
   /* ---------- State: Store all friend requests ---------- */
@@ -118,6 +118,6 @@ const FriendRequest = () => {
     // ========== End Main Container ==========
   );
 };
-/* ==================== End FriendRequest Component ==================== */
+/* ==================== End FriendList Component ==================== */
 
-export default FriendRequest;
+export default FriendList;

@@ -1,64 +1,83 @@
-import React from "react";
-import { FiSearch, FiRepeat, FiXCircle } from "react-icons/fi";
+import { getDatabase, ref, onValue, push, set } from "firebase/database";
+import React, { useEffect, useState } from 'react';
+import { FiSearch, FiUserCheck, FiUserX } from 'react-icons/fi';
+import { useSelector } from 'react-redux';
 
 const SendReq = () => {
-  const sentRequests = [
-    { id: 1, name: "John Doe", location: "New York, USA" },
-    { id: 2, name: "Jane Smith", location: "Los Angeles, USA" },
-    { id: 3, name: "Michael Johnson", location: "Chicago, USA" },
-    { id: 4, name: "Emily Davis", location: "San Francisco, USA" },
-  ];
+  const reduxUser = useSelector((state) => state.currentUser.value);
+  const db = getDatabase();
+
+  const handelAdd = (data) => {
+    set(push(ref(db, 'friendreq/')), {
+      senderId: reduxUser.uid,
+      senderName: reduxUser.displayName,
+      senderPhoto: reduxUser.photoURL,
+      recieverId: data.id,
+      recieverName: data.name,
+      recieverPhoto: data.photoURL,
+    });
+  };
+
+  const [allReq, setAllReq] = useState([]);
+
+  useEffect(() => {
+    const arr = [];
+    onValue(ref(db, 'friendreq/'), (snapshot) => {
+      snapshot.forEach((item) => {
+        if (item.val().senderId ==reduxUser.uid) {
+          arr.push({ ...item.val(), key: item.key });
+        }
+      });
+      setAllReq(arr);
+    });
+  }, []);
 
   return (
     <div className="min-h-screen bg-gray-100 lg:w-full">
-      {/* Header */}
-      <header className="bg-indigo-600 text-white px-6 py-4 shadow-md flex justify-between items-center">
-        <h1 className="text-xl font-bold">Sent Friend Requests</h1>
+      <header className="bg-blue-600 text-white px-6 py-4 shadow-md flex justify-between items-center">
+        <h1 className="text-xl font-bold">Manage Sending Requests</h1>
         <div className="relative w-full max-w-sm">
           <FiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-300" />
           <input
             type="text"
-            placeholder="Search requests..."
-            className="w-full pl-10 pr-4 py-2 rounded-full bg-indigo-500 text-white placeholder-gray-300 shadow-md focus:outline-none focus:ring-2 focus:ring-white"
+            placeholder="Search friends..."
+            className="w-full pl-10 pr-4 py-2 rounded-full bg-blue-500 text-white placeholder-gray-300 shadow-md focus:outline-none focus:ring-2 focus:ring-white"
           />
         </div>
       </header>
-
-      {/* Friend Request List */}
-      <div className="container mx-auto p-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {sentRequests.map((request) => (
-            <div
-              key={request.id}
-              className="flex items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition cursor-pointer"
-            >
-              {/* Profile Picture */}
-              <img
-                src="https://via.placeholder.com/80"
-                alt={`${request.name}'s Avatar`}
-                className="w-16 h-16 rounded-full border-2 border-indigo-500"
-              />
-
-              {/* Friend Info */}
-              <div className="ml-4 flex-1">
-                <h3 className="text-lg font-semibold text-gray-800">
-                  {request.name}
-                </h3>
-                <p className="text-sm text-gray-500">{request.location}</p>
+      <div className="container mx-auto p-6 space-y-10">
+        <section>
+          <h2 className="text-lg font-semibold text-gray-700 mb-4">
+            Sending Requests
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {allReq.map((item) => (
+              <div
+                key={item.key}
+                className="flex items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition"
+              >
+                <img
+                  src={item.recieverPhoto || '/default-avatar.jpg'}
+                  alt="Sender Avatar"
+                  className="w-16 h-16 rounded-full border-2 border-blue-500"
+                />
+                <div className="ml-4 flex-1">
+                  <h3 className="text-lg font-semibold text-gray-800">
+                    {item.recieverName}
+                  </h3>
+                </div>
+                <div className="space-x-1 p-3 flex">
+                  <button className="px-4 py-2 bg-green-500 text-white active:scale-[1.1] flex items-center gap-2 rounded-full hover:bg-green-600 shadow-md">
+                    <FiUserCheck /> Confirm
+                  </button>
+                  <button className="py-2 px-4 bg-red-500 flex items-center active:scale-[1.1] gap-2 text-white rounded-full hover:bg-red-600 shadow-md">
+                    <FiUserX /> Remove
+                  </button>
+                </div>
               </div>
-
-              {/* Actions */}
-              <div className="space-x-2">
-                <button className="p-2 bg-yellow-500 text-white rounded-full hover:bg-yellow-600 shadow-md">
-                  <FiRepeat />
-                </button>
-                <button className="p-2 bg-red-500 text-white rounded-full hover:bg-red-600 shadow-md">
-                  <FiXCircle />
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </section>
       </div>
     </div>
   );

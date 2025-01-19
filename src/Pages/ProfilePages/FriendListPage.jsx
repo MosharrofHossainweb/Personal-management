@@ -5,19 +5,9 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 const itemListPage = () => {
-  // const item = [
-  //   { id: 1, name: 'John Doe', location: 'New York, USA', online: true },
-  //   { id: 2, name: 'Jane Smith', location: 'Los Angeles, USA', online: false },
-  //   { id: 3, name: 'Michael Johnson', location: 'Chicago, USA', online: true },
-  //   {
-  //     id: 4,
-  //     name: 'Emily Davis',
-  //     location: 'San Francisco, USA',
-  //     online: false,
-  //   },
-  // ];
+ 
   // ===================Redux data======================
-  const reduxUser = useSelector((state) => state.currentUser.value);
+  const reduxUser =useSelector((state) => state.currentUser.value);
   
   // ===================Redux data======================
   // =====================firebase variable======================
@@ -86,17 +76,17 @@ const itemListPage = () => {
                 <div className="flex gap-3 m-5">
                   <button
                     onClick={() => handelAdd(item)}
-                    className="bg-green-500 text-white px-3 py-1 rounded-lg shadow hover:bg-green-600 transition"
+                    className="bg-green-500 text-white px-3 py-1 active:scale-[1.1] rounded-lg shadow hover:bg-green-600 transition"
                   >
                     Add
                   </button>
                   <Link
                     to="/messages"
-                    className="bg-blue-500 text-white px-3 py-1 rounded-lg shadow hover:bg-blue-600 transition"
+                    className="bg-blue-500 text-white px-3 py-1 active:scale-[1.1] rounded-lg shadow hover:bg-blue-600 transition"
                   >
                     Message
                   </Link>
-                  <button className="bg-red-500 text-white px-3 py-1 rounded-lg shadow hover:bg-red-600 transition">
+                  <button className="bg-red-500 text-white px-3 active:scale-[1.1] py-1 rounded-lg shadow hover:bg-red-600 transition">
                     Remove
                   </button>
                 </div>
