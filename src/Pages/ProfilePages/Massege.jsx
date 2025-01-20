@@ -1,6 +1,54 @@
-import React from 'react';
+import { getDatabase, onValue, ref } from 'firebase/database';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { ChatuserData } from '../../Slice/ChatUserSlice';
 
 const Massege = () => {
+  // Redux selector to get the current user details
+  const sliceUser = useSelector((state) => state.currentUser.value);
+
+  // Initialize Firebase Realtime Database
+  const db = getDatabase();
+  const dispatch=useDispatch()
+  // ======================function pat========================
+  const handelUser=(chatuser)=>{
+dispatch(ChatuserData(chatuser))
+localStorage.setItem('chatuser',JSON.stringify(item))
+  }
+  // ======================Function part========================
+
+  // State to hold the list of friends
+  const [allfriend, setAllfriend] = useState([]);
+  useEffect(() => {
+    const friendMap = new Map();
+
+    // Fetch friend data from the database
+    onValue(ref(db, 'friends/'), (snapshot) => {
+      snapshot.forEach((item) => {
+        const data = item.val();
+        // Check if the current user is involved
+        if (data.currentUserId === sliceUser.uid) {
+          friendMap.set(data.friendId, {
+            friendId: data.friendId,
+            friendName: data.friendName,
+            friendPhoto: data.friendPhoto,
+            key: item.key,
+          });
+        } else if (data.friendId === sliceUser.uid) {
+          friendMap.set(data.currentUserId, {
+            friendId: data.currentUserId,
+            friendName: data.currentUserName,
+            friendPhoto: data.currentUserPhoto,
+            key: item.key,
+          });
+        }
+      });
+
+      // Update state with friend list
+      setAllfriend(Array.from(friendMap.values()));
+    });
+  }, [sliceUser.uid, db]);
+
   return (
     <>
       <div className="min-h-screen w-full flex flex-col bg-gray-100">
@@ -17,28 +65,26 @@ const Massege = () => {
           {/* Chat List Sidebar */}
           <aside className="hidden md:block w-1/4 bg-white shadow-lg overflow-y-auto">
             <ul>
-              {Array(10)
-                .fill('')
-                .map((_, index) => (
-                  <li
-                    key={index}
-                    className="border-b px-6 py-4 flex items-center hover:bg-gray-100 transition"
-                  >
-                    <img
-                      src="https://via.placeholder.com/40"
-                      alt="User Avatar"
-                      className="w-10 h-10 rounded-full mr-4"
-                    />
-                    <div className="text-sm">
-                      <h4 className="font-semibold text-gray-800">
-                        User {index + 1}
-                      </h4>
-                      <p className="text-gray-500 truncate">
-                        Last message preview...
-                      </p>
-                    </div>
-                  </li>
-                ))}
+              {allfriend.map((item) => (
+                <li onClick={()=>handelUser(item)}
+                  key={item}
+                  className="border-b px-6 py-4 flex items-center hover:bg-gray-200 transition"
+                >
+                  <img
+                    src={item.friendPhoto}
+                    alt="User Avatar"
+                    className="w-10 h-10 rounded-full mr-4"
+                  />
+                  <div className="text-sm">
+                    <h4 className="font-semibold text-xl text-gray-800">
+                    {item.friendName} 
+                    </h4>
+                    <p className="text-gray-500 truncate">
+                     
+                    </p>
+                  </div>
+                </li>
+              ))}
             </ul>
           </aside>
 

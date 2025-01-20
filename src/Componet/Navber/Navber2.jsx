@@ -38,7 +38,7 @@ const Navber2 = () => {
             </div>
           </Link>
           <Link
-            to="/friendlist"
+            to="/alluserlist"
             className="block px-4 py-2 rounded-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-300"
           >
             All Users

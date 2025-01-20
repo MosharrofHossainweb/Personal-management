@@ -26,9 +26,10 @@ import FriendRequest from './Pages/ProfilePages/FriendRequest';
 import Massege from './Pages/ProfilePages/Massege';
 import Block from './Pages/ProfilePages/Block';
 import SendReq from './Pages/ProfilePages/SendReq';
-import FriendListPage from './Pages/ProfilePages/FriendListPage';
+
 import Navber2 from './Componet/Navber/Navber2';
 import FriendList from './Pages/ProfilePages/FriendList';
+import AllUserPage from './Pages/ProfilePages/AllUserPage';
 
 const App = () => {
   const myrout = createBrowserRouter(
@@ -52,7 +53,7 @@ const App = () => {
 
         <Route path="/" element={<LayoutTwo />}>
           <Route path='/profile' element={<Profile/>}/>
-          <Route path="/friendlist" element={<FriendListPage />} />
+          <Route path="/alluserlist" element={<AllUserPage/>} />
           <Route path="/friendrequest" element={<FriendRequest />} />
           <Route path="/messages" element={<Massege />} />
           <Route path="/blocked" element={<Block />} />

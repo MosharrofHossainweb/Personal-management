@@ -4,7 +4,7 @@ import { getDatabase, ref, onValue, push, set } from 'firebase/database';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-const itemListPage = () => {
+const AllUserPage = () => {
  
   // ===================Redux data======================
   const reduxUser =useSelector((state) => state.currentUser.value);
@@ -99,4 +99,4 @@ const itemListPage = () => {
   );
 };
 
-export default itemListPage;
+export default AllUserPage;

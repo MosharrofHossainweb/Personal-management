@@ -1,17 +1,65 @@
-import React from "react";
-import { FiSearch, FiUserCheck } from "react-icons/fi";
+import {
+  getDatabase,
+  onValue,
+  push,
+  ref,
+  remove,
+  set,
+} from 'firebase/database';
+import React, { useEffect, useState } from 'react';
+import { FiSearch, FiUserCheck } from 'react-icons/fi';
+import { useSelector } from 'react-redux';
 
 const Block = () => {
-  const blockedUsers = [
-    { id: 1, name: "John Doe", location: "New York, USA" },
-    { id: 2, name: "Jane Smith", location: "Los Angeles, USA" },
-    { id: 3, name: "Michael Johnson", location: "Chicago, USA" },
-    { id: 4, name: "Emily Davis", location: "San Francisco, USA" },
-  ];
+  // Redux selector to get the current user details
+  const sliceUser = useSelector((state) => state.currentUser.value);
+
+  // ========== Firebase variable =============
+  const db = getDatabase();
+
+  // State to hold the list of blocked users
+  const [allblockUser, setAllblockUser] = useState([]);
+
+  // ============================= Unblock ============================
+  const handelUnblock = (friendData) => {
+    set(push(ref(db, 'friends/')), {
+      friendId: friendData.blockUserId,
+      friendName: friendData.blockUserName,
+      friendPhoto: friendData.blockUserPhoto,
+      currentUserId: sliceUser.uid,
+      currentUserName: sliceUser.displayName,
+      currentUserPhoto: sliceUser.photoURL,
+    });
+    remove(ref(db, `blockUserData/${friendData.key}`));
+  };
+
+  // ========== Realtime Database Fetch =========
+  useEffect(() => {
+    const arr = [];
+    // Fetch block user data from Firebase Realtime Database
+    const blockUserRef = ref(db, 'blockUserData/');
+
+    onValue(blockUserRef, (snapshot) => {
+      snapshot.forEach((item) => {
+        // Only push the data if the currentUserId matches the Redux user id
+        if (item.val().currentUserId === sliceUser.uid) {
+          arr.push({ ...item.val(), key: item.key });
+        }
+      });
+
+      // Update state with the list of blocked users
+      setAllblockUser(arr);
+    });
+
+    // Clean-up function for when the component unmounts or data changes
+    return () => {
+      // Firebase automatically unsubscribes from the onValue listener
+    };
+  }, [sliceUser.uid, db]); // Dependency array ensures useEffect runs on user id or db change
 
   return (
     <div className="min-h-screen bg-gray-100 lg:w-full">
-      {/* Header */}
+      {/* ========== Header Section ========== */}
       <header className="bg-red-600 text-white px-6 py-4 shadow-md flex justify-between items-center">
         <h1 className="text-xl font-bold">Blocked Users</h1>
         <div className="relative w-full max-w-sm">
@@ -24,33 +72,38 @@ const Block = () => {
         </div>
       </header>
 
-      {/* Block List */}
+      {/* ========== Blocked User List ========== */}
       <div className="container mx-auto p-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {blockedUsers.map((user) => (
+          {allblockUser.map((item) => (
             <div
-              key={user.id}
+              key={item.key}
               className="flex items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition cursor-pointer"
             >
-              {/* Profile Picture */}
+              {/* ========== Profile Picture ========== */}
               <img
-                src="https://via.placeholder.com/80"
-                alt={`${user.name}'s Avatar`}
+                src={item.blockUserPhoto}
+                alt={`${item.blockUserName}'s Avatar`}
                 className="w-16 h-16 rounded-full border-2 border-red-500"
               />
 
-              {/* Blocked User Info */}
+              {/* ========== Blocked User Info ========== */}
               <div className="ml-4 flex-1">
                 <h3 className="text-lg font-semibold text-gray-800">
-                  {user.name}
+                  {item.blockUserName}
                 </h3>
-                <p className="text-sm text-gray-500">{user.location}</p>
+                <p className="text-sm text-gray-500">{item.location || 'Location not available'}</p>
               </div>
 
-              {/* Unblock Button */}
+              {/* ========== Unblock Button ========== */}
               <div>
-                <button className="p-2 bg-green-500 text-white rounded-full hover:bg-green-600 shadow-md">
-                  <FiUserCheck />
+                <button
+                  onClick={() => handelUnblock(item)}
+                  className="p-2 bg-green-500 text-white rounded-full hover:bg-green-600 shadow-md"
+                >
+                  <div className="flex gap-2 items-center">
+                    <FiUserCheck /> Unblock
+                  </div>
                 </button>
               </div>
             </div>
