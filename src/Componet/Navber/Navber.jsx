@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { FaUserTie } from "react-icons/fa";
+import { FaUserTie } from 'react-icons/fa';
 const Navber = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
@@ -70,7 +70,7 @@ const Navber = () => {
               onClick={() => navigate('/layouttwo')}
               className="px-4 py-2 bg-slate-200 text-gray-900 rounded-full flex items-center gap-2 font-semibold hover:bg-yellow-300 hover:shadow-lg transition duration-300"
             >
-             <FaUserTie /> Profile
+              <FaUserTie /> Profile
             </button>
           </div>
 
@@ -142,25 +142,19 @@ const Navber = () => {
             </Link>
             <Link
               to="/login"
-              className="block py-3 px-4 text-yellow-400 mb-2 mt-2 bg-gray-500 hover:bg-yellow-300 hover:text-gray-900 transition duration-300"
+              className="block py-3 px-4 text-yellow-400 mb-2 mt-2  hover:bg-yellow-300 hover:text-gray-900 transition duration-300"
             >
               Login
             </Link>
             <Link
               to="/register"
-              className="block py-3 px-4 text-center bg-blue-100 text-gray-900 font-semibold hover:bg-blue-700 transition duration-300"
-            >
-              Sign Up
-            </Link>
-            <Link
-              to="/register"
-              className="block py-3 px-4 text-center bg-blue-100 text-gray-900 font-semibold hover:bg-blue-700 transition duration-300"
+              className="block py-3 px-4 text-yellow-400 mb-2 mt-2  hover:bg-yellow-300 hover:text-gray-900 transition duration-300"
             >
               Sign Up
             </Link>
             <Link
               to="/layouttwo"
-              className="block py-3 px-4 text-center bg-blue-100 text-gray-900 font-semibold hover:bg-blue-700 transition duration-300"
+              className="block py-3 px-4 text-yellow-400 mb-2 mt-2  hover:bg-yellow-300 hover:text-gray-900 transition duration-300"
             >
               Profile
             </Link>

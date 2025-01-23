@@ -10,7 +10,7 @@ const ProductItem = () => {
       
       <img 
         className="w-full h-48 sm:h-56 md:h-64 lg:h-72 object-cover"
-        src="/procduct1.png"
+        src="/furniture1.png"
         alt="product"
         />
         

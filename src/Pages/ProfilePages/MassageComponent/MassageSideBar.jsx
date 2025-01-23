@@ -1,6 +1,6 @@
-import { getDatabase, onValue, ref } from "firebase/database";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { getDatabase, onValue, ref } from "firebase/database";
 import { ChatuserData } from "../../../Slice/ChatUserSlice";
 
 const MassageSideBar = () => {
@@ -60,7 +60,7 @@ const MassageSideBar = () => {
               <img
                 src={friend.friendPhoto || "/default-avatar.jpg"}
                 alt="friend_photo"
-                className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-gray-300"
+                className="w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-gray-300"
               />
               <h2 className="text-sm lg:text-base font-semibold text-gray-700 truncate">
                 {friend.friendName}

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const OurProduct = () => {
   return (
     <>
-      <section className="product pb-16 bg-blue-950">
+      <section className="product pb-16 bg-blue-300">
         <div className="container mx-auto px-4">
           
           {/* Heading */}

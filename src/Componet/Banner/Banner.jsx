@@ -7,7 +7,7 @@ const Banner = () => {
 
   return (
     <>
-      <div className="relative bg-blue-400  from-blue-900 to-purple-700 text-white overflow-hidden min-h-screen flex items-center">
+      <div className="relative bg-blue-300  from-blue-900 to-purple-700 text-white overflow-hidden min-h-screen flex items-center">
         <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center px-6 lg:px-12">
           {/* Text Section */}
           <div className="w-full lg:w-1/2 text-center lg:text-left space-y-6">
