@@ -58,7 +58,7 @@ const AboutPage = () => {
           {["React.js", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Responsive Design"].map((skill, index) => (
             <div
               key={index}
-              className="py-3 px-4 bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition text-sm font-semibold text-white"
+              className="py-3 px-4 bg-gray-800 hover:bg-yellow-200 hover:text-gray-900 rounded-lg shadow-md hover:shadow-lg transition text-sm font-semibold text-white"
             >
               {skill}
             </div>
