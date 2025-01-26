@@ -57,7 +57,7 @@ const ServicePage = () => {
       {/* Page Header */}
       <div className="text-center mb-14">
         <h1 className="text-5xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary animate-fade-in">
-          Our Services
+          My Services
         </h1>
         <p className="text-gray-300 text-lg max-w-2xl mx-auto animate-slide-right">
           Explore a wide range of IT and digital solutions tailored to elevate

@@ -15,7 +15,7 @@ const OurProduct = () => {
           
           {/* Heading */}
           <h2 className="text-center pt-5 lg:pt-10 md:pt-7 text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
-            Our Products
+            My Development
           </h2>
 
           {/* Product Grid */}
