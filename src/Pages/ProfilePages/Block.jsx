@@ -89,10 +89,10 @@ const Block = () => {
 
               {/* ========== Blocked User Info ========== */}
               <div className="ml-4 flex-1">
-                <h3 className="text-lg font-semibold text-gray-800">
+                <h3 className="text-[10px] md:text-[14px] lg:text-[18px] font-semibold text-gray-800">
                   {item.blockUserName}
                 </h3>
-                <p className="text-sm text-gray-500">{item.location || 'Location not available'}</p>
+               
               </div>
 
               {/* ========== Unblock Button ========== */}
@@ -101,7 +101,7 @@ const Block = () => {
                   onClick={() => handelUnblock(item)}
                   className="p-2 bg-green-500 text-white rounded-full hover:bg-green-600 shadow-md"
                 >
-                  <div className="flex gap-2 items-center">
+                  <div className="flex gap-2 text-[10px] md:text-[14px] lg:text-[20px] items-center">
                     <FiUserCheck /> Unblock
                   </div>
                 </button>

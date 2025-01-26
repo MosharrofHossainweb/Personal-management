@@ -12,15 +12,15 @@ const Navber2 = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <div className="flex flex-col lg:w-64 bg-gradient-to-b from-blue-600 to-indigo-700 text-white min-h-screen">
+    <div className="flex flex-col w-[100px] lg:w-64 bg-gradient-to-b from-blue-600 to-indigo-700 text-white min-h-screen">
       {/* Logo and Toggle */}
-      <div className="flex justify-between items-center px-4 py-4 lg:py-6">
+      <div className="flex justify-between items-center px-2 md:px-2  py-2 md:py-4 lg:py-6">
         <Link to="/" className="text-yellow-400 text-2xl lg:text-3xl font-bold">
           M<span className="text-white">Dev</span>
         </Link>
         <button
           onClick={toggleMenu}
-          className="text-white text-3xl lg:hidden"
+          className="text-white text-xl lg:hidden"
           aria-label="Toggle Menu"
         >
           {isOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
@@ -42,7 +42,7 @@ const Navber2 = () => {
             src={sliceUser?.photoURL}
             alt="Profile"
           />
-          <span className="text-sm lg:text-lg">Profile</span>
+          <span className="text-[8px] lg:text-lg">Profile</span>
         </Link>
         {[
           { path: "/alluserlist", label: "All Users" },
