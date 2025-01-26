@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import InputEmoji from "react-input-emoji";
 import { useSelector } from "react-redux";
-import { getDatabase, onValue, push, ref } from "firebase/database";
+import { getDatabase, onValue, push, ref, set } from "firebase/database";
 import { BiSend } from "react-icons/bi";
 
 const MassageBox = () => {
@@ -44,14 +44,14 @@ const MassageBox = () => {
   }, [ChatuserSlceData]);
 
   return (
-    <section className="msgbox flex flex-col h-full bg-slate-100">
+    <section className="flex flex-col w-[280px]  md:w-[760px] lg:w-[1000px] xl:w-[1280px] h-screen overflow-x-scroll bg-slate-100">
       {/* Header */}
-      <div className="masgBar py-3 bg-blue-600 px-4 flex items-center gap-3">
-        <div className="user_photo">
+      <div className="py-3 px-4 flex items-center gap-3 bg-blue-600">
+        <div className="flex-shrink-0">
           <img
             src={ChatuserSlceData?.friendPhoto}
             alt="user_photo"
-            className="h-10 w-10 rounded-full bg-slate-300 lg:h-14 lg:w-14"
+            className="h-10 w-10 md:h-12 md:w-12 lg:h-14 lg:w-14 rounded-full bg-slate-300"
           />
         </div>
         <h2 className="text-sm md:text-lg lg:text-xl font-semibold text-white truncate">
@@ -60,7 +60,7 @@ const MassageBox = () => {
       </div>
 
       {/* Message Display Area */}
-      <div className="write_mg flex-1 overflow-y-auto bg-slate-200 p-4">
+      <div className="flex-1 overflow-y-auto p-4 bg-slate-200 rounded-xl scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
         {allmsg.length > 0 ? (
           allmsg.map((item) =>
             item.senderId === sliceUser.uid ? (
@@ -87,7 +87,7 @@ const MassageBox = () => {
       </div>
 
       {/* Input Field */}
-      <div className="imoji_input flex items-center gap-2 px-3 py-2 bg-white shadow-md">
+      <div className="flex items-center gap-2 px-3 py-2 bg-white shadow-md">
         <InputEmoji
           value={text}
           onChange={setText}
