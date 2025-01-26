@@ -33,7 +33,7 @@ const SendReq = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-100 lg:w-full">
+    <div className="min-h-screen ml-[110px] md:ml-[120px] lg:ml-[250px] bg-gray-100 lg:w-full">
       <header className="bg-blue-600 text-white px-6 py-4 shadow-md flex justify-between items-center">
         <h1 className="text-xl font-bold">Manage Sending Requests</h1>
         <div className="relative w-full max-w-sm">

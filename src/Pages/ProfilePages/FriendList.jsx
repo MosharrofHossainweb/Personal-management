@@ -64,7 +64,7 @@ const FriendList = () => {
   }, [sliceUser.uid, db]);
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-100 ml-[110px] md:ml-[120px] lg:ml-[250px] ">
       {/* Header Section */}
       <header className="bg-blue-600 text-white px-4 py-3 flex flex-col md:flex-row items-center justify-between shadow-md">
         <h1 className="text-lg md:text-xl font-bold mb-3 md:mb-0">
@@ -81,7 +81,7 @@ const FriendList = () => {
       </header>
 
       {/* Friends List Section */}
-      <div className="container mx-auto px-4 py-6 space-y-6">
+      <div className="container  mx-auto px-4 py-6 space-y-6">
         <h2 className="text-base md:text-lg font-semibold text-gray-700">
           All Friends List
         </h2>

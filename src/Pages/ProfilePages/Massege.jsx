@@ -5,7 +5,7 @@ import MassageBox from './MassageComponent/MassageBox';
 const Massege = () => {
   return (
     <>
-      <div className="massage w-[250px]">
+      <div className="massage ml-[80px] p-5 ">
         <MassageSideBar/>
         <MassageBox/>
       </div>

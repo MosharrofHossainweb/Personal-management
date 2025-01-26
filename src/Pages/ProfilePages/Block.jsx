@@ -58,7 +58,7 @@ const Block = () => {
   }, [sliceUser.uid, db]); // Dependency array ensures useEffect runs on user id or db change
 
   return (
-    <div className="min-h-screen bg-gray-100 lg:w-full">
+    <div className="min-h-screen bg-gray-100 ml-[110px] md:ml-[120px] lg:ml-[250px] lg:w-full">
       {/* ========== Header Section ========== */}
       <header className="bg-red-600 text-white px-6 py-4 shadow-md flex justify-between items-center">
         <h1 className="text-xl font-bold">Blocked Users</h1>
@@ -78,7 +78,7 @@ const Block = () => {
           {allblockUser.map((item) => (
             <div
               key={item.key}
-              className="flex items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition cursor-pointer"
+              className="flex flex-wrap gap-2 items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition cursor-pointer"
             >
               {/* ========== Profile Picture ========== */}
               <img
@@ -101,7 +101,7 @@ const Block = () => {
                   onClick={() => handelUnblock(item)}
                   className="p-2 bg-green-500 text-white rounded-full hover:bg-green-600 shadow-md"
                 >
-                  <div className="flex gap-2 text-[10px] md:text-[14px] lg:text-[20px] items-center">
+                  <div className="flex  gap-2 text-[10px] md:text-[14px] lg:text-[20px] items-center">
                     <FiUserCheck /> Unblock
                   </div>
                 </button>

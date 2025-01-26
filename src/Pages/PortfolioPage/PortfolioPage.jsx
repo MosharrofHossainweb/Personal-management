@@ -3,7 +3,7 @@ import React from 'react'
 const PortfolioPage = () => {
   return (
     <>
-    <section className='portfolio pt-6 lg:pt-[100px] lg:pb-[100px] pb-5'>
+    <section className='portfolio pt-6 lg:pt-[200px]  lg:pb-[200px] pb-5'>
       <div className="container mx-auto px-4">
         <h2 className='title text-center text-3xl lg:text-4xl font-bold mb-8 text-blue-800'>
           Our Recent Developments

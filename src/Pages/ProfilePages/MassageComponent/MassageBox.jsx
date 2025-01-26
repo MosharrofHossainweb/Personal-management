@@ -44,9 +44,9 @@ const MassageBox = () => {
   }, [ChatuserSlceData]);
 
   return (
-    <section className="flex flex-col w-[250px] md:w-[640px] lg:w-[1024px] xl:w-[1280px] h-screen bg-slate-100">
+    <section className="flex flex-col  md:ml-[120px] lg:ml-[250px] w-[270px] md:w-[640px] lg:w-[1024px] xl:w-[1280px] h-screen bg-slate-200">
       {/* Header */}
-      <div className="py-3 px-4 w-[250px] md:w-[640px] lg:w-[1024px] xl:w-[1280px] flex items-center gap-3 bg-blue-600">
+      <div className="py-3 px-4 w-[250px]  fixed right-0  md:w-[640px] lg:w-[1024px] xl:w-[1280px] flex items-center gap-3 bg-blue-700">
         <div className="flex-shrink-0">
           <img
             src={ChatuserSlceData?.friendPhoto}
@@ -60,20 +60,20 @@ const MassageBox = () => {
       </div>
 
       {/* Message Display Area */}
-      <div className="flex-1  p-4 bg-slate-200 rounded-t-xl w-[250px] md:w-[640px] lg:w-[1024px] xl:w-[1280px] scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
+      <div className="flex-1  p-4 bg-slate-200  rounded-t-xl w-[250px] md:w-[640px] lg:w-[1024px] xl:w-[1280px] scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
         {allmsg.length > 0 ? (
           allmsg.map((item) =>
             item.senderId === sliceUser.uid ? (
               <div
                 key={item.key}
-                className="bg-blue-500 text-white px-3 py-2 mt-3 rounded-lg ml-auto max-w-[55%] md:max-w-[60%] lg:max-w-[50%] text-sm md:text-base break-words"
+                className="bg-blue-500 mb-[70px] text-white px-3 py-2 mt-3 rounded-lg ml-auto max-w-[55%] md:max-w-[60%] lg:max-w-[50%] text-sm md:text-base break-words"
               >
                 {item.msg}
               </div>
             ) : (
               <div
                 key={item.key}
-                className="bg-gray-300 text-black px-3 py-2 mt-3 rounded-lg max-w-[55%] md:max-w-[60%] lg:max-w-[50%] text-sm md:text-base break-words"
+                className="bg-gray-300 mb-[70px] text-black px-3 py-2 mt-3 rounded-lg max-w-[55%] md:max-w-[60%] lg:max-w-[50%] text-sm md:text-base break-words"
               >
                 {item.msg}
               </div>
@@ -87,7 +87,7 @@ const MassageBox = () => {
       </div>
 
       {/* Input Field */}
-      <div className="flex items-center gap-2 px-3 py-3 bg-white shadow-md fixed bottom-0  right-0 w-[250px] md:w-[640px] lg:w-[1024px] xl:w-[1280px]">
+      <div className="flex items-center gap-2 px-3 py-3 bg-white shadow-md fixed bottom-0 rounded-xl  right-0 w-[250px] md:w-[640px] lg:w-[1024px] xl:w-[1280px]">
         <InputEmoji
           value={text}
           onChange={setText}

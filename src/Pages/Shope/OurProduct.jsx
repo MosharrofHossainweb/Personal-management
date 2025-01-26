@@ -1,11 +1,16 @@
 import React from 'react';
 import ProductItem from '../../Componet/ProductItem/ProductItem';
 import { Link } from 'react-router-dom';
+import Productitem2 from '../../Componet/ProductItem/Productitem2';
+import ProductItem3 from '../../Componet/ProductItem/ProductItem3';
+import ProductItem4 from '../../Componet/ProductItem/ProductItem4';
+import ProductItem5 from '../../Componet/ProductItem/ProductItem5';
+import ProductItem6 from '../../Componet/ProductItem/ProductItem6';
 
 const OurProduct = () => {
   return (
     <>
-      <section className="product pb-16 bg-blue-300">
+      <section className="product pb-16 bg-gray-700">
         <div className="container mx-auto px-4">
           
           {/* Heading */}
@@ -15,14 +20,14 @@ const OurProduct = () => {
 
           {/* Product Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 m-5 pt-8">
+            <ProductItem6 />
+            <Productitem2/>
             <ProductItem />
+            <ProductItem3/>
             <ProductItem />
-            <ProductItem />
-            <ProductItem />
-            <ProductItem />
-            <ProductItem />
-            <ProductItem />
-            <ProductItem />
+            <ProductItem5 />
+            <ProductItem3 />
+            <ProductItem4 />
           </div>
 
           {/* Show More Button */}

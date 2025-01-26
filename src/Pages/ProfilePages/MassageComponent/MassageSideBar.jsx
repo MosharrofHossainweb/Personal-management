@@ -42,20 +42,20 @@ const MassageSideBar = () => {
   };
 
   return (
-    <div className="w-full h-[130px]  bg-gray-100  shadow-lg">
+    <div className="w-full h-[130px]   bg-gray-100  shadow-lg">
       {/* Header */}
-      <h2 className="text-lg lg:text-xl w-[250px] md:w-[640px] lg:w-[1024px] xl:w-[1280px] font-bold bg-blue-500 text-white text-center py-3">
+      <h2 className="text-lg lg:text-xl fixed right-0 w-[250px] md:w-[640px] lg:w-[1024px] xl:w-[1280px] font-bold bg-blue-500 text-white text-center py-3">
         Friends
       </h2>
 
       {/* Friends List */}
-      <div className=" flex justify-center  w-[220px] h-[100px] md:w-[760px] lg:w-[1000px] xl:w-[1220px] overflow-x-scroll scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
+      <div className=" flex justify-center fixed mt-[50px] right-0 w-[220px] h-[100px] md:w-[760px] lg:w-[1024px] xl:w-[1280px] overflow-x-scroll scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
         {allFriends.length > 0 ? (
           allFriends.map((friend) => (
             <div
               key={friend.key}
               onClick={() => handleUser(friend)}
-              className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-blue-400 transition cursor-pointer"
+              className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-blue-400 transition cursor-pointer"
             >
               <img
                 src={friend.friendPhoto || "/default-avatar.jpg"}

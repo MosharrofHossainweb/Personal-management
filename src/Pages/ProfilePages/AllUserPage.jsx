@@ -34,7 +34,7 @@ const AllUserPage = () => {
   }, [reduxUser.uid]);
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen ml-[115px] md:ml-[120px] lg:ml-[250px] bg-gray-100">
       {/* Header */}
       <header className="bg-indigo-500 text-white px-4 py-3 shadow-lg flex flex-col md:flex-row md:justify-between items-center">
         <h1 className="text-sm md:text-lg font-bold mb-3 md:mb-0">

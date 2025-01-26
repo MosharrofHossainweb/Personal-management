@@ -12,7 +12,7 @@ const Navber2 = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <div className="flex flex-col w-[100px] lg:w-64 bg-gradient-to-b from-blue-600 to-indigo-700 text-white min-h-screen">
+    <div className="flex flex-col fixed  w-[110px] lg:w-64 bg-gradient-to-b from-blue-600 to-indigo-700 text-white min-h-screen">
       {/* Logo and Toggle */}
       <div className="flex justify-between items-center px-2 md:px-2  py-2 md:py-4 lg:py-6">
         <Link to="/" className="text-yellow-400 text-2xl lg:text-3xl font-bold">
