@@ -12,26 +12,26 @@ const Navber2 = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <div className="flex flex-col fixed  w-[110px] lg:w-64 bg-gradient-to-b from-blue-600 to-indigo-700 text-white min-h-screen">
+    <div className="fixed top-0 left-0 w-full bg-gradient-to-b from-blue-600 to-indigo-700 text-white lg:w-64 lg:fixed lg:h-screen lg:flex lg:flex-col">
       {/* Logo and Toggle */}
-      <div className="flex justify-between items-center px-2 md:px-2  py-2 md:py-4 lg:py-6">
-        <Link to="/" className="text-yellow-400 text-2xl lg:text-3xl font-bold">
+      <div className="flex justify-between items-center px-4 py-4 lg:py-6 lg:block">
+        <Link to="/" className="text-yellow-400 text-2xl font-bold">
           M<span className="text-white">Dev</span>
         </Link>
         <button
           onClick={toggleMenu}
-          className="text-white text-xl lg:hidden"
+          className="text-white text-2xl lg:hidden"
           aria-label="Toggle Menu"
         >
           {isOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
         </button>
       </div>
 
-      {/* Navigation Links */}
+      {/* Links */}
       <nav
         className={`${
           isOpen ? "block" : "hidden"
-        } lg:block flex flex-col space-y-4 px-4 transition-all duration-300`}
+        } lg:block px-4 py-4 transition-all duration-300`}
       >
         <Link
           to="/profile"
@@ -42,7 +42,7 @@ const Navber2 = () => {
             src={sliceUser?.photoURL}
             alt="Profile"
           />
-          <span className="text-[8px] lg:text-lg">Profile</span>
+          <span className="text-xs lg:text-lg">Profile</span>
         </Link>
         {[
           { path: "/alluserlist", label: "All Users" },
@@ -60,21 +60,13 @@ const Navber2 = () => {
             <span className="text-sm lg:text-lg">{link.label}</span>
           </Link>
         ))}
-      </nav>
-
-      {/* Logout */}
-      <div
-        className={`px-4 py-4 ${
-          isOpen ? "block" : "hidden"
-        } lg:block transition-all duration-300`}
-      >
         <button
           onClick={handleLogout}
-          className="w-full bg-red-600 py-2 rounded-md hover:bg-red-700"
+          className="w-full mt-4 bg-red-600 py-2 rounded-md hover:bg-red-700"
         >
           Logout
         </button>
-      </div>
+      </nav>
     </div>
   );
 };
