@@ -44,9 +44,9 @@ const MassageBox = () => {
   }, [ChatuserSlceData]);
 
   return (
-    <section className="flex flex-col  md:ml-[120px] lg:ml-[250px] w-[270px] md:w-[640px] lg:w-[1024px] xl:w-[1310px] h-screen ">
+    <section className="flex flex-col  md:ml-[120px] lg:ml-[250px] w-[270px] md:w-[640px] lg:w-[1024px] xl:w-[1280px] h-screen ">
       {/* Header */}
-      <div className="py-3 px-4 w-[330px]  fixed right-0  md:w-[640px] lg:w-[1024px] xl:w-[1320px] flex items-center gap-3 bg-blue-700">
+      <div className="py-3 px-4 w-[330px]  fixed right-0  md:w-[640px] lg:w-[1024px] xl:w-[12800px] flex items-center gap-3 bg-blue-700">
         <div className="flex-shrink-0">
           <img
             src={ChatuserSlceData?.friendPhoto}
@@ -60,7 +60,7 @@ const MassageBox = () => {
       </div>
 
       {/* Message Display Area */}
-      <div className="flex-1  p-4 bg-slate-200  rounded-t-xl w-[330px] md:w-[640px] lg:w-[1024px] xl:w-[1310px] scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
+      <div className="flex-1  p-4 bg-slate-200  rounded-t-xl w-[330px] md:w-[640px] lg:w-[1024px] xl:w-[1280px] scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
         {allmsg.length > 0 ? (
           allmsg.map((item) =>
             item.senderId === sliceUser.uid ? (

@@ -44,12 +44,9 @@ const MassageSideBar = () => {
   return (
     <div className="w-full h-[130px]   bg-gray-100  shadow-lg">
       {/* Header */}
-      {/* <h2 className="text-lg lg:text-xl fixed right-0 w-[250px] md:w-[640px] lg:w-[1024px] xl:w-[1280px] font-bold bg-blue-500 text-white text-center py-3">
-        Friends
-      </h2> */}
-
+     
       {/* Friends List */}
-      <div className=" flex justify-center fixed mt-[50px]  lg:mt-[80px] bg-gray-600 right-0 w-[330px] h-[100px] lg:h-[140px] md:w-[760px] lg:w-[1024px] xl:w-[1320px] overflow-x-scroll scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
+      <div className=" flex justify-center fixed mt-[50px]  lg:mt-[80px] bg-gray-600 right-0 w-[330px] h-[100px] lg:h-[140px] md:w-[760px] lg:w-[1024px] xl:w-[1280px] overflow-x-scroll scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
         {allFriends.length > 0 ? (
           allFriends.map((friend) => (
             <div
