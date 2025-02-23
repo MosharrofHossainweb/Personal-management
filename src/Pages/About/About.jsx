@@ -11,7 +11,7 @@ const AboutPage = () => {
         </h1>
         <p className="text-gray-300 text-lg max-w-3xl mx-auto animate-slide-right">
           Hi, I'm <span className="font-bold text-primary">Mosharrof Hossain</span>, 
-          a passionate Front-End Web Developer specializing in creating responsive, interactive, and visually appealing web applications.
+          a passionate MERN Stack Developer specializing in building scalable, efficient, and dynamic web applications.
         </p>
       </div>
 
@@ -30,15 +30,16 @@ const AboutPage = () => {
         <div className="space-y-6 animate-slide-right">
           <h2 className="text-3xl font-bold text-white">Who I Am</h2>
           <p className="text-gray-400 leading-relaxed">
-            I'm a highly motivated Front-End Web Developer with a strong focus on modern web technologies like 
-            <span className="font-bold text-blue-400"> React.js</span>, 
-            <span className="font-bold text-blue-400"> Tailwind CSS</span>, and 
-            <span className="font-bold text-blue-400"> JavaScript</span>. 
-            My mission is to turn ideas into exceptional digital experiences.
+            I'm a highly motivated MERN Stack Developer with a strong focus on modern web technologies like 
+            <span className="font-bold text-blue-400"> MongoDB</span>, 
+            <span className="font-bold text-blue-400"> Express.js</span>, 
+            <span className="font-bold text-blue-400"> React.js</span>, and 
+            <span className="font-bold text-blue-400"> Node.js</span>. 
+            My mission is to create full-stack applications that are both powerful and user-friendly.
           </p>
           <p className="text-gray-400 leading-relaxed pb-9">
-            From building e-commerce platforms to crafting seamless user interfaces, I thrive on delivering innovative solutions 
-            that not only meet but exceed client expectations. I believe in lifelong learning and staying updated with the latest trends in technology.
+            From developing dynamic e-commerce platforms to crafting robust backend solutions, I thrive on delivering innovative and efficient web applications. 
+            I believe in lifelong learning and staying updated with the latest trends in web development.
           </p>
           
           <Link 
@@ -55,10 +56,10 @@ const AboutPage = () => {
           My Skills
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-          {["React.js", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Responsive Design"].map((skill, index) => (
+          {["MongoDB", "Express.js", "React.js", "Node.js", "JavaScript", "Tailwind CSS"].map((skill, index) => (
             <div
               key={index}
-              className="py-3 px-4 bg-gray-800 hover:bg-yellow-200 hover:text-gray-900 rounded-lg shadow-md hover:shadow-lg transition text-sm font-semibold text-white"
+              className="py-3 px-4 bg-gray-600 hover:bg-yellow-200 hover:text-gray-900 rounded-lg shadow-md hover:shadow-lg transition text-sm font-semibold text-white"
             >
               {skill}
             </div>
@@ -72,7 +73,7 @@ const AboutPage = () => {
           Let's Build Something Great Together!
         </h2>
         <p className="text-gray-300 mb-8">
-          I'm always excited to collaborate on innovative projects. Whether you need a modern website or a complete front-end solution, 
+          I'm always excited to collaborate on innovative projects. Whether you need a full-stack web application or a custom solution, 
           I'm here to help.
         </p>
         <Link 

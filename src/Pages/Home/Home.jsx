@@ -4,14 +4,17 @@ import Shop from '../PortfolioPage/Shop';
 import Explore from './Explore/Explore';
 import Portfolio from '../Porfolio/Portfolio';
 import OurProduct from '../Shope/OurProduct';
+import Video from '../../Componet/VideoComponent/Video';
 
 const Home = () => {
   return (
     <>
       <Banner />
       <Explore />
+      <Video/>
       <Portfolio />
       <OurProduct/>
+      
     </>
   );
 };

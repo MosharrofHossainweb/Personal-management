@@ -5,6 +5,7 @@ import { IoLogoLinkedin } from 'react-icons/io5';
 import { FaGithub } from 'react-icons/fa';
 import { TbWorld } from 'react-icons/tb';
 import { FaWhatsapp } from 'react-icons/fa';
+
 const Contact = () => {
   return (
     <>
@@ -16,8 +17,7 @@ const Contact = () => {
               Contact <span className="text-yellow-300">Mosharrof Hossain</span>
             </h1>
             <p className="text-gray-300 text-lg lg:text-xl mb-6 animate-slide-in">
-              I am a React.js Front-End Developer offering professional web
-              development services. Feel free to reach out for collaboration,
+              I am a MERN Stack Developer specializing in building full-stack web applications. Feel free to reach out for collaboration,
               inquiries, or your next big project!
             </p>
             <div className="space-y-4 lg:space-y-0 lg:space-x-8 lg:flex lg:items-center">

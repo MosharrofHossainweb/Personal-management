@@ -32,9 +32,9 @@ const Portfolio = () => {
           </div>
 
           <div className="portfolio_item relative overflow-hidden rounded-lg shadow-lg group">
-            <img className='w-full h-72 object-cover transform group-hover:scale-105 transition duration-300' src="/lasvase2.png" alt="portfolio" />
+            <img className='w-full h-72 object-cover transform group-hover:scale-105 transition duration-300' src="/vogal.png" alt="portfolio" />
             <div className="portfolio_overlay absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-              <p className="text-white text-xl font-semibold">Lasvas Project part-2</p>
+              <p className="text-white text-xl font-semibold">Life Style Fashion web site</p>
             </div>
           </div>
 
@@ -53,9 +53,9 @@ const Portfolio = () => {
           </div>
 
           <div className="portfolio_item relative overflow-hidden rounded-lg shadow-lg group">
-            <img className='w-full h-72 object-cover transform group-hover:scale-105 transition duration-300' src="/procduct1.png" alt="portfolio" />
+            <img className='w-full h-72 object-cover transform group-hover:scale-105 transition duration-300' src="/farm.png" alt="portfolio" />
             <div className="portfolio_overlay absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-              <p className="text-white text-xl font-semibold">Product Showcase</p>
+              <p className="text-white text-xl font-semibold">Agro Web site</p>
             </div>
           </div>
 
