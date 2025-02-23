@@ -86,7 +86,7 @@ const Banner = () => {
           <div className="flex justify-center lg:justify-start gap-4 mt-10 pt-6">
             <Link
               to="/service"
-              className="px-6 py-3 bg-yellow-300 text-black font-semibold rounded-lg shadow-md hover:bg-yellow-400 transition transform hover:-translate-y-1"
+              className="px-6 py-3 bg-yellow-300 text-black font-semibold rounded-lg shadow-md hover:bg-white transition transform hover:-translate-y-1"
             >
               Our Service
             </Link>
