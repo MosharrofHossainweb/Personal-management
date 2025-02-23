@@ -8,9 +8,9 @@ const Explore = () => {
   const [counter, setCounter] = useState(0);
 
   useEffect(() => {
-    const target = 50; // Final number for the counter
-    const increment = 1; // Increment value
-    const duration = 2000; // Total duration of the animation in milliseconds
+    const target = 50;
+    const increment = 1;
+    const duration = 2000;
     const intervalTime = duration / target;
 
     const interval = setInterval(() => {
@@ -18,13 +18,13 @@ const Explore = () => {
         if (prev < target) {
           return prev + increment;
         } else {
-          clearInterval(interval); // Stop the counter once it reaches the target
+          clearInterval(interval);
           return target;
         }
       });
     }, intervalTime);
 
-    return () => clearInterval(interval); // Cleanup on unmount
+    return () => clearInterval(interval);
   }, []);
 
   const settings = {
@@ -46,6 +46,13 @@ const Explore = () => {
           slidesToShow: 1,
         },
       },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          arrows: false, // Hide arrows on very small screens for better UX
+        },
+      },
     ],
   };
 
@@ -57,15 +64,15 @@ const Explore = () => {
   ];
 
   return (
-    <section className="Explore py-[100px] bg-gray-600 lg:min-h-[90vh]">
-      <div className="container mx-auto flex flex-col lg:flex-row gap-10 items-center">
+    <section className="Explore py-16 bg-gray-600">
+      <div className="container mx-auto flex flex-col lg:flex-row gap-10 items-center px-4">
         {/* Text Section */}
         <div className="w-full lg:w-1/3 text-white text-center lg:text-left">
-          <h2 className="text-2xl lg:text-4xl  font-bold mb-4">
-           <span className='text-yellow-200 text-5xl'>{counter}+</span>  Beautiful Website
+          <h2 className="text-xl md:text-3xl lg:text-4xl font-bold mb-4">
+            <span className="text-yellow-200 text-4xl md:text-6xl">{counter}+</span> Beautiful Websites
           </h2>
-          <p className="text-base lg:text-lg mb-6">
-            Our designer has crafted beautiful Website prototypes to inspire you.
+          <p className="text-sm md:text-lg mb-6">
+            Our designers have crafted stunning website prototypes to inspire you.
           </p>
           <Button buttonTitle="Explore More" path="/shop" />
         </div>
@@ -74,11 +81,11 @@ const Explore = () => {
         <div className="w-full lg:w-2/3">
           <Slider {...settings}>
             {slides.map((src, index) => (
-              <div key={index} className="p-2 ">
+              <div key={index} className="px-2">
                 <img
                   src={src}
-                  className="w-full h-[700px] object-cover rounded-lg"
-                  alt={`Room ${index + 1}`}
+                  className="w-full h-48 md:h-64 lg:h-96 xl:h-[500px] object-cover rounded-lg"
+                  alt={`Website ${index + 1}`}
                 />
               </div>
             ))}
