@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const Video = () => {
   return (
@@ -11,10 +11,17 @@ const Video = () => {
           Get to know more about me and my journey in web development.
         </p>
         <div className="relative w-full aspect-video rounded-lg overflow-hidden shadow-lg border-4 border-gray-500">
-          <video className="w-full h-full" controls>
-            <source src="/MERN.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/VheBuHHWokc?si=VcIcsKwzRSa3t97E"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            className="w-full h-full"
+          ></iframe>
         </div>
       </div>
     </section>
