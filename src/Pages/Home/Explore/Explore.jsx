@@ -61,8 +61,8 @@ const Explore = () => {
       <div className="container mx-auto flex flex-col lg:flex-row gap-10 items-center">
         {/* Text Section */}
         <div className="w-full lg:w-1/3 text-white text-center lg:text-left">
-          <h2 className="text-2xl lg:text-4xl text-yellow-300 font-bold mb-4">
-            {counter}+ Beautiful Website
+          <h2 className="text-2xl lg:text-4xl  font-bold mb-4">
+           <span className='text-yellow-200 text-5xl'>{counter}+</span>  Beautiful Website
           </h2>
           <p className="text-base lg:text-lg mb-6">
             Our designer has crafted beautiful Website prototypes to inspire you.
@@ -74,10 +74,10 @@ const Explore = () => {
         <div className="w-full lg:w-2/3">
           <Slider {...settings}>
             {slides.map((src, index) => (
-              <div key={index} className="p-2">
+              <div key={index} className="p-2 ">
                 <img
                   src={src}
-                  className="w-full h-[400px] object-cover rounded-lg"
+                  className="w-full h-[700px] object-cover rounded-lg"
                   alt={`Room ${index + 1}`}
                 />
               </div>
